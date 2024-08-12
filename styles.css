@@ -1,0 +1,67 @@
+/* Basic reset and full height for the body and html */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Press Start 2P', cursive; /* Retro game font */
+    color: #ffffff; /* Light text color */
+    display: flex;
+}
+body{
+    background: url('https://wallpapers.com/images/hd/cod-background-5fnukv0lfgxq4ckm.jpg');
+}
+
+.container {
+    display: flex;
+    position: absolute;
+    right:25%;
+    top:0%;
+}
+
+.search-bar {
+    display: flex;
+    position: absolute;
+    background-color: #222; /* Dark background for the search bar */
+    border: 2px solid #f00; /* Red border for arcade theme */
+    border-radius: 8px;
+    padding: 10px;
+}
+.search-bar:hover{
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Red glow effect */
+
+}
+
+input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+button {
+    background-color: #f00; /* Red button for arcade theme */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #c00; /* Darker red on hover */
+}
+
+button:focus {
+    outline: none;
+}
