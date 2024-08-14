@@ -43,6 +43,150 @@
     </footer>
     <script src="script.js"></script>
 </body>
+<style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Text */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+}
+
+/* Header */
+header {
+  background: #1a1a1a;
+  color: #00ff00;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #00ff00;
+}
+.text{
+  color:#00ff00;
+  transition: text-shadow 0.3s ease-in-out;
+} 
+
+.text:hover , .overlay:hover{
+  text-shadow: 
+                0 0 5px rgba(255, 0, 0, 0.432), /* Glowing effect color */
+                0 0 10px rgba(255, 0, 0, 0.71), /* Increase the glow size */
+                0 0 15px rgba(255, 0, 0, 0.955), /* Further increase the glow size */
+                0 0 20px rgb(255, 0, 0), /* Further increase the glow size */
+                0 0 25px rgb(255, 21, 0), /* Further increase the glow size */
+                0 0 30px rgb(255, 0, 0); /* Maximum glow size */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  max-width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Slides */
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top :50%;
+  right:0%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slide:hover .overlay {
+  opacity: 1;
+}
+.slide:hover img{
+  opacity: 0.3;
+}
+.container {
+  padding:0.5rem;
+  display:block;
+  position: absolute;
+  right:25%;
+  top:0%;
+}
+.pl{
+  font-size: 25px;
+}
+.search-bar {
+  display: flex;
+  position: absolute;
+  background-color: #222; /* Dark background for the search bar */
+  border: 2px solid #00ff00; /* Green border for arcade theme */
+  border-radius: 8px;
+  padding: 10px;
+}
+.search-bar:hover{
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Green glow effect */
+
+}
+/* Manual Controls */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  user-select: none;
+  z-index: 1000;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  color: #00ff00;
+  text-align: center;
+  padding: 10px;
+  border-top: 2px solid #00ff00;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+  .prev, .next {
+      font-size: 12px;
+      padding: 8px;
+  }
+}
+</style>
 <script>
     let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
