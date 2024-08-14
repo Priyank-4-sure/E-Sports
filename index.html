@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Search Box</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer-Themed Slideshow</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <input type="text" class="search-box" placeholder="Search...">
-  </div>
+    <header>
+        <h1 class="text">Gamer's Gallery</h1>
+    </header>
+    <main>
+        <div class="slideshow-container">
+          <div class="slides" id="sl">
+            <!-- Slides -->
+            <div class="slide">
+                <img src="cod.jpg" alt="Description 1">
+                <div class="overlay">Unleash your gaming skill in COD</div>
+            </div>
+            <div class="slide">
+                <img src="https://i.pinimg.com/originals/1d/46/27/1d4627f8b0a294c5e98e87f6cdbeaa8d.jpg" alt="Description 2">
+                <div class="overlay">If you are a pc gamer, Compete with the best players in VALORANT</div>
+            </div>
+            <div class="slide">
+                <img src="https://wallpapers.com/images/hd/purple-gaming-nepi2tnxp6g0mvz9.jpg" alt="Description 3">
+                <div class="overlay">This list isnt exhaustive , there are tons of different activities available!!</div>
+            </div>
+            <!-- Manual Controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+        </div>
+        <div class="container">
+          <div class="search-bar">
+              <input type="text" class="pl" placeholder="Find your destination here...">
+              <button type="submit" class="pl">🔍</button>
+          </div>
+       </div>
+    </main>
+    <footer>
+        <p class="text">&copy; 2024 Gamer's Gallery. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
