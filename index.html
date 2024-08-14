@@ -44,7 +44,7 @@
     <script src="script.js"></script>
 </body>
 <style>
-    /* General Reset */
+ /* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -69,6 +69,7 @@ header {
 .text{
   color:#00ff00;
   transition: text-shadow 0.3s ease-in-out;
+  display: inline;
 } 
 
 .text:hover , .overlay:hover{
@@ -120,22 +121,20 @@ header {
   opacity: 0.3;
 }
 .container {
-  padding:0.5rem;
-  display:block;
+  display:inline;
   position: absolute;
-  right:25%;
+  right:0%;
   top:0%;
+  padding:0.5rem;
 }
 .pl{
-  font-size: 25px;
+  font-size: 2vw;
 }
 .search-bar {
-  display: flex;
-  position: absolute;
+  padding:10px;
   background-color: #222; /* Dark background for the search bar */
   border: 2px solid #00ff00; /* Green border for arcade theme */
   border-radius: 8px;
-  padding: 10px;
 }
 .search-bar:hover{
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Green glow effect */
@@ -186,6 +185,7 @@ footer {
       padding: 8px;
   }
 }
+
 </style>
 <script>
     let slideIndex = 0;
