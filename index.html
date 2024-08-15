@@ -4,47 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamer-Themed Slideshow</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1 class="text">Gamer's Gallery</h1>
-    </header>
-    <main>
-        <div class="slideshow-container">
-          <div class="slides" id="sl">
-            <!-- Slides -->
-            <div class="slide">
-                <img src="https://wallpapers.com/images/hd/cod-background-5fnukv0lfgxq4ckm.jpg" alt="Description 1">
-                <div class="overlay">Unleash your gaming skill in COD</div>
-            </div>
-            <div class="slide">
-                <img src="https://i.pinimg.com/originals/1d/46/27/1d4627f8b0a294c5e98e87f6cdbeaa8d.jpg" alt="Description 2">
-                <div class="overlay">If you are a pc gamer, Compete with the best players in VALORANT</div>
-            </div>
-            <div class="slide">
-                <img src="https://wallpapers.com/images/hd/purple-gaming-nepi2tnxp6g0mvz9.jpg" alt="Description 3">
-                <div class="overlay">This list isnt exhaustive , there are tons of different activities available!!</div>
-            </div>
-            <!-- Manual Controls -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-        </div>
-        <div class="container">
-          <div class="search-bar">
-              <input type="text" class="pl" placeholder="Find your destination here...">
-              <button type="submit" class="pl">🔍</button>
-          </div>
-       </div>
-    </main>
-    <footer>
-        <p class="text">&copy; 2024 Gamer's Gallery. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-<style>
- /* General Reset */
+    <style>
+        /* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -60,16 +21,16 @@ body {
 
 /* Header */
 header {
+  display: flex;
   background: #1a1a1a;
-  color: #00ff00;
   padding: 20px;
-  text-align: center;
   border-bottom: 2px solid #00ff00;
+  justify-content: space-between  ;
 }
 .text{
   color:#00ff00;
   transition: text-shadow 0.3s ease-in-out;
-  display: inline;
+  align-self: center;
 } 
 
 .text:hover , .overlay:hover{
@@ -84,17 +45,18 @@ header {
 
 /* Slideshow Container */
 .slideshow-container {
-  position: relative;
-  top:50%;
-  max-width: 80%;
-  margin: auto;
+  display: block;
+  position: absolute;
+  max-width: 100%;
   overflow: hidden;
+  padding:2rem;
 }
 
 /* Slides */
 .slide {
   display: none;
   position: relative;
+  top:15%;
 }
 
 .slide img {
@@ -122,14 +84,11 @@ header {
   opacity: 0.3;
 }
 .container {
-  display:inline;
-  position: absolute;
-  right:0%;
-  top:0%;
   padding:0.5rem;
 }
 .pl{
-  font-size: 2vw;
+  font-size: 1.25rem;
+  background-color:#1a1a1a;
 }
 .search-bar {
   padding:10px;
@@ -187,9 +146,45 @@ footer {
   }
 }
 
-</style>
-<script>
-    let slideIndex = 0;
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="text">Gamer's Gallery</h1>
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" class="pl" placeholder="Find your destination here...">
+                <button type="submit" class="pl">🔍</button>
+            </div>
+         </div>
+    </header>
+    <main>
+        <div class="slideshow-container">
+          <div class="slides" id="sl">
+            <!-- Slides -->
+            <div class="slide">
+                <img src="https://wallpapers.com/images/hd/cod-background-5fnukv0lfgxq4ckm.jpg" alt="Description 1">
+                <div class="overlay">Description 1</div>
+            </div>
+            <div class="slide">
+                <img src="https://i.pinimg.com/originals/1d/46/27/1d4627f8b0a294c5e98e87f6cdbeaa8d.jpg" alt="Description 2">
+                <div class="overlay">Description 2</div>
+            </div>
+            <div class="slide">
+                <img src="https://wallpapers.com/images/hd/purple-gaming-nepi2tnxp6g0mvz9.jpg" alt="Description 3">
+                <div class="overlay">Description 3</div>
+            </div>
+            <!-- Manual Controls -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+        </div>
+    </main>
+    <footer>
+        <p class="text">&copy; 2024 Gamer's Gallery. All rights reserved.</p>
+    </footer>
+    <script >
+        let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
 let stop=0;
@@ -228,5 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(slideIndex);
     startSlideshow();
 });
-</script>
+
+    </script>
+</body>
 </html>
