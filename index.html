@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamer-Themed Slideshow</title>
     <style>
-/* General Reset */
+        /* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -43,25 +43,26 @@ header {
                 0 0 30px rgb(255, 0, 0); /* Maximum glow size */
 }
 
+
 /* Slideshow Container */
 .slideshow-container {
-  display: block;
-  position: absolute;
-  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:70vw;
+  min-width: 100%;
   overflow: hidden;
-  padding:2rem;
+  padding:2.5rem;
+  position: relative;
 }
 
 /* Slides */
 .slide {
   display: none;
-  position: relative;
-  top:15%;
 }
 
 .slide img {
   width: 100%;
-  height: auto;
 }
 
 .overlay {
@@ -86,7 +87,6 @@ header {
 .container {
   padding:0.5vw;
   align-self:center;
-  flex-grow:5;
 }
 .pl{
   font-size: 1.5vw;
@@ -109,20 +109,22 @@ header {
   top: 50%;
   width: auto;
   padding: 16px;
-  margin-top: -22px;
   color: #fff;
   font-weight: bold;
   font-size: 18px;
   border-radius: 0 3px 3px 0;
   background-color: rgba(0, 0, 0, 0.5);
   user-select: none;
-  z-index: 1000;
+  z-index: 10;
 }
-
+.prev{
+  left:0%;
+  margin-left:2.5rem;
+}
 .next {
-  right: 0;
+  right:0%;
   border-radius: 3px 0 0 3px;
-  margin-right:2rem;
+  margin-right:2.5rem;
 }
 
 
@@ -139,7 +141,7 @@ footer {
   border-top: 2px solid #00ff00;
   position: fixed;
   width: 100%;
-  bottom: 0;
+  bottom: 0%;
 }
 
 /* Responsive */
@@ -148,13 +150,30 @@ footer {
       font-size: 12px;
       padding: 8px;
   }
+  .header{
+    padding:2.5vw;
+    flex-direction: column;
+  }
+  .container{
+    display: flex;
+    right:0%;
+    flex-grow: 1;
+  }
+  .search-bar{
+    display: flex;
+    padding: 1vw;
+    flex-grow:1;
+  }
+  input.pl{
+    display: flex;
+    flex-grow: 1;
+  }
 }
-
 
     </style>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1 class="text">Gamer's Gallery</h1>
         <div class="container">
             <div class="search-bar">
@@ -165,30 +184,29 @@ footer {
     </header>
     <main>
         <div class="slideshow-container">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
           <div class="slides" id="sl">
             <!-- Slides -->
             <div class="slide">
-                <img src="https://wallpapers.com/images/hd/cod-background-5fnukv0lfgxq4ckm.jpg" alt="Description 1">
+                <img src="https://wallpapers.com/images/hd/cod-background-5fnukv0lfgxq4ckm.jpg" alt="PLEASE WAIT Loading image...">
                 <div class="overlay">Description 1</div>
             </div>
             <div class="slide">
-                <img src="https://i.pinimg.com/originals/1d/46/27/1d4627f8b0a294c5e98e87f6cdbeaa8d.jpg" alt="Description 2">
+                <img src="https://i.pinimg.com/originals/1d/46/27/1d4627f8b0a294c5e98e87f6cdbeaa8d.jpg" alt="PLEASE WAIT Loading image...">
                 <div class="overlay">Description 2</div>
             </div>
             <div class="slide">
-                <img src="https://wallpapers.com/images/hd/purple-gaming-nepi2tnxp6g0mvz9.jpg" alt="Description 3">
+                <img src="https://wallpapers.com/images/hd/purple-gaming-nepi2tnxp6g0mvz9.jpg" alt="PLEASE WAIT Loading image...">
                 <div class="overlay">Description 3</div>
             </div>
-            <!-- Manual Controls -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
           </div>
         </div>
     </main>
     <footer>
         <p class="text">&copy; 2024 Gamer's Gallery. All rights reserved.</p>
     </footer>
-    <script >
+    <script>
         let slideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const totalSlides = slides.length;
