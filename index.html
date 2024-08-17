@@ -1,281 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><!--Using the basic encoding schemes and setting the title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gamer-Themed Slideshow</title>
+    <title>E-Sports Slideshow</title>
     <style>
-        /* General Reset */
+        /* Resetting prev */
         * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        /* Body and Text */
+
+        /* Body and Font */
         body {
-          font-family: 'Arial', sans-serif;
-          background-color: #0f0f0f;
-          color: #e0e0e0;
+            font-family: 'Georgia',serif;
+            background-color: #0f0f0f;
+            color: #e0e0e0;
         }
-        
-        /* Header */
+
+        /*Designing the Header */
         header {
-          display: flex;
-          background: #1a1a1a;
-          padding: 20px;
-          border-bottom: 2px solid #00ff00;
-          justify-content: space-between  ;
-          align-items: center;
-        }
-        .text{
-          color:#00ff00;
-          transition: text-shadow 0.3s ease-in-out;
-          text-align: center;
-        } 
-        
-        .text:hover , .overlay:hover{
-          text-shadow: 
-            0 0 5px rgba(255, 0, 0, 0.432), /* Glowing effect color */
-            0 0 10px rgba(255, 0, 0, 0.71), /* Increase the glow size */
-            0 0 15px rgba(255, 0, 0, 0.955), /* Further increase the glow size */
-            0 0 20px rgb(255, 0, 0), /* Further increase the glow size */
-            0 0 25px rgb(255, 21, 0), /* Further increase the glow size */
-            0 0 30px rgb(255, 0, 0); /* Maximum glow size */
-        }
-        
-        
-        /* Slideshow Container */
-        .slideshow-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height:70vw;
-          width: 100%;
-          overflow: hidden;
-          padding:2.5rem;
-          position: relative;
-        }
-        
-        /* Slides */
-        .slide {
-          display: none;
-        }
-        
-        .slide img {
-          width: 100%;
-        }
-        
-        .overlay {
-          position: relative;
-          margin-top: 0.7%;
-          top :0%;
-          background: rgba(0, 0, 0, 0.6);
-          color: #fff;
-          width: 100%;
-          text-align: center;
-          padding: 10px;
-          font-size: 18px;
-          opacity: 0;
-          font-weight: bold;
-          transition: opacity 0.5s ease;
-        }
-        
-        .slide:hover .overlay {
-          opacity: 1;
-        }
-        
-        .slide:hover img{
-          opacity: 0.3;
-        }
-        
-        .container {
-          padding:0.5vw;
-          align-self:center;
-        }
-        
-        .pl{
-          font-size: 1.5vw;
-          background-color:#1a1a1a;
-          color: #fff;
-        }
-        
-        .search-bar {
-          padding:0.5rem;
-          background-color: #222; /* Dark background for the search bar */
-          border: 2px solid #00ff00; /* Green border for arcade theme */
-          border-radius: 8px;
-        }
-        
-        .search-bar:hover{
-          box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Green glow effect */
-        
-        }
-        
-        /* Manual Controls */
-        .prev, .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          padding: 16px;
-          color: #fff;
-          font-weight: bold;
-          font-size: 18px;
-          border-radius: 0 3px 3px 0;
-          background-color: rgba(0, 0, 0, 0.5);
-          user-select: none;
-          z-index: 10;
-        }
-        
-        .prev{
-          left:0%;
-          margin-left:2.5rem;
-        }
-        
-        .next {
-          right:0%;
-          border-radius: 3px 0 0 3px;
-          margin-right:2.5rem;
-        }
-        
-        .prev:hover, .next:hover {
-          background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        /* Footer */
-        footer {
-          background: #1a1a1a;
-          color: #00ff00;
-          text-align: center;
-          padding: 10px;
-          border-top: 2px solid #00ff00;
-          position: fixed;
-          width: 100%;
-          bottom: 0%;
-        }
-        
-        /* Responsive */
-        @media only screen and (max-width: 900px) {
-          .prev, .next {
-              font-size: 12px;
-              padding: 8px;
-          }
-        
-          .header{
-            padding:2.5vw;
-            flex-direction: column;
-          }
-        
-          .container{
-            width:40%;
-          }
-        
-          .overlay{
-            margin-top: 0%;
-          }
-        
-          .search-bar{
             display: flex;
-            padding: 0.5vw;
-            justify-content: center;
-          }
-        
-          input.pl{
-            width:80%;
-            font-size: large;
-          }
-        
-          button.pl{
-            font-size: small;
-          }
-          
+            background: #1a1a1a;
+            padding: 20px;
+            border-bottom: 2px solid #00ff00;
+            justify-content: space-between  ;
+            align-items: center;
+        }
+        /*Custom design for better look*/
+        .text{
+            color:#00ff00;
+            transition: text-shadow 0.3s ease-in-out;
+            text-align: center;
+        } 
+
+        /*For glowing effect*/
+        .text:hover , .overlay:hover{
+            text-shadow: 
+                0 0 5px rgba(255, 0, 0, 0.432), 
+                0 0 10px rgba(255, 0, 0, 0.71),
+                0 0 15px rgba(255, 0, 0, 0.955), 
+                0 0 20px rgb(255, 0, 0), 
+                0 0 25px rgb(255, 21, 0), 
+                0 0 30px rgb(255, 0, 0);
+                /*Each one line spreads the glow further*/
+        }
+
+
+        /*Container of slideshow*/
+        .slideshow-container {
+            display: flex;
+            justify-content: center;/*Horizontal centralization*/
+            align-items: center;/*Vertical centralization*/
+            position: relative;
+            height:70vw;/*Adjusting acc to need*/
+            width: 100%;
+            overflow: hidden;/*So that it fits inside the screen*/
+            padding:2.5rem;/*Adjusting acc to need*/
+        }
+
+        /*Slides feature common to all slides */
+        .slide {
+            display: none;
+        }
+
+        /*so that whole image is being shown*/
+        .slide img {
+            width: 100%;
+        }
+
+        .overlay {
+            position: relative;
+            margin-top: -2.5rem;     /*Adjusting acc to need*/
+            top :0%;    /*to be at top*/
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 10px;     /*Adjusting acc to need*/
+            font-size: 18px;     /*Adjusting acc to need*/
+            opacity: 0;     /*not visible at beginning*/
+            font-weight: bold;
+            transition: opacity 0.5s ease;     /*For better visual appeal*/
+        }
+
+        .slide:hover .overlay {
+            opacity: 1;     /*Setting opacity of description to 1*/
+        }
+
+        .slide:hover img{
+            opacity: 0.3;    /*Decreasing opacity to show information*/
+        }
+
+        .container {
+            padding:0.5vw;
+        }
+
+        .pl{
+            font-size: 1.5vw;     /*Adjusting acc to need*/
+            background-color:#1a1a1a;   /*Dark Background*/
+            color: #fff;    /*For Contrast*/
+        }
+
+        .search-bar {
+            padding:0.5rem; /*Adjusting acc to need*/
+            background-color: #222;     /* Dark background*/
+            border: 2px solid #00ff00;  /* Border of green as per theme */
+            border-radius: 8px;
+        }
+
+        .search-bar:hover{
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);   /* Green glowing effect */
+        }
+
+        /*For Manual Controls */
+        .prev, .next {
+            cursor: pointer;    /*Change cursor to pointer*/
+            position: absolute;
+            top: 50%;
+            padding: 16px;  /*Adjusting acc to need*/
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;    /*Adjusting acc to need*/
+            border-radius: 0 3px 3px 0;     /*Curved in right side*/
+            background-color: rgba(0, 0, 0, 0.5);
+            user-select: none;
+            z-index: 10;    /*for appearing at top*/
+        }
+
+        .prev{
+            left:0%;    /*at extreme left*/
+            margin-left:2.5rem;
+        }
+
+        .next {
+            right:0%; /*at extreme right*/
+            border-radius: 3px 0 0 3px;     /*Curved in right side*/
+            margin-right:2.5rem;    
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Footer */
+        footer { /*Similar to header*/
+            background: #1a1a1a;
+            color: #00ff00;
+            text-align: center;
+            padding: 10px;
+            border-top: 2px solid #00ff00;
+            position: fixed;
+            width: 100%;
+            bottom: 0%;
+        }
+
+        /* To make it look better for smaller screens*/
+
+        @media only screen and (max-width: 800px) {
+            .prev, .next {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            header{
+                padding:2.5vw;
+                flex-direction: column;
+            }
+
+            .container{
+                width:40%;
+            }
+
+            .search-bar{
+                display: flex;
+                padding: 0.5vw;
+                justify-content: center;
+            }
+
+            input.pl{
+                width:80%;
+                font-size: large;
+            }
+
+            button.pl{
+                font-size: small;
+            }
+
         }
 
     </style>
 </head>
 <body>
-    <header class="header">
+    <header>
         <h1 class="text">Esports IIT KGP</h1>
-        <div class="container">
-            <div class="search-bar">
+
+        <div class="container"><!--For better structure-->
+
+            <div class="search-bar"><!--For better look using a form and a button-->
+                
                 <input type="text" class="pl" placeholder="Search...">
                 <button type="submit" onclick="search()" class="pl">🔍</button>
+            
             </div>
+
          </div>
+
     </header>
     <main>
-        <h1>&nbsp</h1>
+
+        <h1>&nbsp</h1><!--Creating space-->
         <h2 class="text">Unleash Your Gaming Skills HERE!</h2>
-        <div class="slideshow-container">
+
+        <div class="slideshow-container"> <!--Container here-->
+
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          <div class="slides" id="sl">
-            <!-- Slides -->
+
+          <div class="slides"><!-- Slides followed by data of each slides-->
+
             <div class="slide">
                 <img src="https://wallpapers.com/images/hd/cod-background-5fnukv0lfgxq4ckm.jpg" alt="PLEASE WAIT Loading image...">
-                <div class="overlay">Massive Intel Drop: Call of Duty: Modern Warfare III, Call of Duty: Warzone, and Call of Duty: Warzone Mobile: Complete Season 4 Intel</div>
+                <div class="overlay">Massive Intel Drop: Call of Duty: Modern Warfare III and Call of Duty: Warzone Mobile: Complete Season 4 Intel</div>
             </div>
+
             <div class="slide">
                 <img src="https://i.pinimg.com/originals/1d/46/27/1d4627f8b0a294c5e98e87f6cdbeaa8d.jpg" alt="PLEASE WAIT Loading image...">
                 <div class="overlay">‘Valorant’ 8.10 Patch Notes Improve Life For New Players</div>
             </div>
+
             <div class="slide">
                 <img src="https://wallpapers.com/images/hd/purple-gaming-nepi2tnxp6g0mvz9.jpg" alt="PLEASE WAIT Loading image...">
                 <div class="overlay">Explore various games, and show your full POTENTIAL!</div>
             </div>
+
           </div>
         </div>
+
         <h2 class="text">AND Contribute it to Your Prestigious IIT KGP!!!</h2>
         <h1>&nbsp;</h1>
         <h1>&nbsp;</h1>
+
     </main>
+
     <footer>
         <p class="text">&copy; 2024 Gamer's Gallery. All rights reserved.</p>
         <a href="abtme.html">About Me</a>
     </footer>
+
+    <!--Attached javascript-->
     <script>
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
         let stop=0;
         let inte=null;
-        const sl=document.getElementById("sl")
-        function showSlide(index) {
-            if (index >= totalSlides) { slideIndex = 0; }
-            if (index < 0) { slideIndex = totalSlides - 1; }
-        
+        function display(index) {
+
+            if (index >= totalSlides){      /*make a loop inshort*/
+                slideIndex = 0; 
+            }
+
+            if (index < 0) {        /*make a loop inshort*/
+                slideIndex = totalSlides - 1; 
+            }
+
             slides.forEach((slide, i) => {
-                slide.style.display = i === slideIndex ? 'block' : 'none';
+                if(i==slideIndex){      /*To set the correct image to block display mode*/
+                    slide.style.display="block";
+                }
+                else{       /*To set the wrong image to none display mode*/
+                    slide.style.display="none";
+                }
             });
         }
         function plusSlides(n) {
-            showSlide(slideIndex += n);
+            display(slideIndex += n); /*Changing slide*/
         }
-        
+
         function search(){
-            window.alert("No Information available");
+            window.alert("No Information available"); /*Just to make it responsive*/
         }
-        
-        sl.addEventListener("mouseover",()=>
+
+        sl.addEventListener("mouseover",()=>    /*stopping slideshow*/
         {
             clearInterval(inte);
         });
-        
-        sl.addEventListener("mouseleave",()=>
+
+        sl.addEventListener("mouseleave",()=>       /*resuming slideshow*/
         {
             startSlideshow();
         });
-        
+
         function startSlideshow() {
-            inte =setInterval(() => {
+            inte =setInterval(() => {       /*setting the span for slideshow*/
                 plusSlides(1);
             }, 3000); // Change slide every 3 seconds
         }
-        
+
         document.addEventListener('DOMContentLoaded', () => {
-            showSlide(slideIndex);
+            display(slideIndex);        /*displaying just after loading of screen*/
             startSlideshow();
         });
+
     </script>
 </body>
 </html>
