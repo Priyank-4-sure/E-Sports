@@ -5,188 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gamer-Themed Slideshow</title>
     <style>
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body and Text */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #0f0f0f;
-  color: #e0e0e0;
-}
-
-/* Header */
-header {
-  display: flex;
-  background: #1a1a1a;
-  padding: 20px;
-  border-bottom: 2px solid #00ff00;
-  justify-content: space-between  ;
-  align-items:center;
-}
-.text{
-  text-align: center;
-  color:#00ff00;
-  transition: text-shadow 0.3s ease-in-out;
-} 
-
-.text:hover , .overlay:hover{
-  text-shadow: 
-                0 0 5px rgba(255, 0, 0, 0.432), /* Glowing effect color */
-                0 0 10px rgba(255, 0, 0, 0.71), /* Increase the glow size */
-                0 0 15px rgba(255, 0, 0, 0.955), /* Further increase the glow size */
-                0 0 20px rgb(255, 0, 0), /* Further increase the glow size */
-                0 0 25px rgb(255, 21, 0), /* Further increase the glow size */
-                0 0 30px rgb(255, 0, 0); /* Maximum glow size */
-}
-
-
-/* Slideshow Container */
-.slideshow-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height:70vw;
-  min-width: 100%;
-  overflow: hidden;
-  padding:2.5rem;
-  position: relative;
-}
-
-/* Slides */
-.slide {
-  display: none;
-}
-
-.slide img {
-  width: 100%;
-}
-
-.overlay {
-  position: absolute;
-  margin-top: 0.7%;
-  top :50%;
-  right:0%;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  font-size: 18px;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.slide:hover .overlay {
-  opacity: 1;
-}
-.slide:hover img{
-  opacity: 0.3;
-}
-.container {
-  padding:0.5vw;
-  align-self:center;
-}
-.pl{
-  font-size: 1.5vw;
-  background-color:#1a1a1a;
-  color: #fff;
-}
-.search-bar {
-  padding:0.5rem;
-  background-color: #222; /* Dark background for the search bar */
-  border: 2px solid #00ff00; /* Green border for arcade theme */
-  border-radius: 8px;
-}
-.search-bar:hover{
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Green glow effect */
-
-}
-/* Manual Controls */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  padding: 16px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 0 3px 3px 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  user-select: none;
-  z-index: 10;
-}
-.prev{
-  left:0%;
-  margin-left:2.5rem;
-}
-.next {
-  right:0%;
-  border-radius: 3px 0 0 3px;
-  margin-right:2.5rem;
-}
-
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Footer */
-footer {
-  background: #1a1a1a;
-  color: #00ff00;
-  text-align: center;
-  padding: 10px;
-  border-top: 2px solid #00ff00;
-  position: fixed;
-  width: 100%;
-  bottom: 0%;
-}
-
-/* Responsive */
-@media only screen and (max-width: 600px) {
-  .prev, .next {
-      font-size: 12px;
-      padding: 8px;
-  }
-  .header{
-    padding:2.5vw;
-    flex-direction: column;
-  }
-  .container{
-    width:70%;
-  }
-  .search-bar{
-    display: flex;
-    padding: 0.5vw;
-    justify-content: center;
-  }
-  input.pl{
-    width:90%;
-  }
-  input.pl{
-    width:85%;
-    font-size: large;
-  }
-  button.pl{
-    margin-left:2px;
-    font-size: small;
-  }
-  .overlay{
-    margin-top: 0%;
-  }
-}
-
+        /* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        /* Body and Text */
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #0f0f0f;
+          color: #e0e0e0;
+        }
+        
+        /* Header */
+        header {
+          display: flex;
+          background: #1a1a1a;
+          padding: 20px;
+          border-bottom: 2px solid #00ff00;
+          justify-content: space-between  ;
+          align-items: center;
+        }
+        .text{
+          color:#00ff00;
+          transition: text-shadow 0.3s ease-in-out;
+          text-align: center;
+        } 
+        
+        .text:hover , .overlay:hover{
+          text-shadow: 
+            0 0 5px rgba(255, 0, 0, 0.432), /* Glowing effect color */
+            0 0 10px rgba(255, 0, 0, 0.71), /* Increase the glow size */
+            0 0 15px rgba(255, 0, 0, 0.955), /* Further increase the glow size */
+            0 0 20px rgb(255, 0, 0), /* Further increase the glow size */
+            0 0 25px rgb(255, 21, 0), /* Further increase the glow size */
+            0 0 30px rgb(255, 0, 0); /* Maximum glow size */
+        }
+        
+        
+        /* Slideshow Container */
+        .slideshow-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height:70vw;
+          width: 100%;
+          overflow: hidden;
+          padding:2.5rem;
+          position: relative;
+        }
+        
+        /* Slides */
+        .slide {
+          display: none;
+        }
+        
+        .slide img {
+          width: 100%;
+        }
+        
+        .overlay {
+          position: relative;
+          margin-top: 0.7%;
+          top :0%;
+          background: rgba(0, 0, 0, 0.6);
+          color: #fff;
+          width: 100%;
+          text-align: center;
+          padding: 10px;
+          font-size: 18px;
+          opacity: 0;
+          font-weight: bold;
+          transition: opacity 0.5s ease;
+        }
+        
+        .slide:hover .overlay {
+          opacity: 1;
+        }
+        
+        .slide:hover img{
+          opacity: 0.3;
+        }
+        
+        .container {
+          padding:0.5vw;
+          align-self:center;
+        }
+        
+        .pl{
+          font-size: 1.5vw;
+          background-color:#1a1a1a;
+          color: #fff;
+        }
+        
+        .search-bar {
+          padding:0.5rem;
+          background-color: #222; /* Dark background for the search bar */
+          border: 2px solid #00ff00; /* Green border for arcade theme */
+          border-radius: 8px;
+        }
+        
+        .search-bar:hover{
+          box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Green glow effect */
+        
+        }
+        
+        /* Manual Controls */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          padding: 16px;
+          color: #fff;
+          font-weight: bold;
+          font-size: 18px;
+          border-radius: 0 3px 3px 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          user-select: none;
+          z-index: 10;
+        }
+        
+        .prev{
+          left:0%;
+          margin-left:2.5rem;
+        }
+        
+        .next {
+          right:0%;
+          border-radius: 3px 0 0 3px;
+          margin-right:2.5rem;
+        }
+        
+        .prev:hover, .next:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        /* Footer */
+        footer {
+          background: #1a1a1a;
+          color: #00ff00;
+          text-align: center;
+          padding: 10px;
+          border-top: 2px solid #00ff00;
+          position: fixed;
+          width: 100%;
+          bottom: 0%;
+        }
+        
+        /* Responsive */
+        @media only screen and (max-width: 900px) {
+          .prev, .next {
+              font-size: 12px;
+              padding: 8px;
+          }
+        
+          .header{
+            padding:2.5vw;
+            flex-direction: column;
+          }
+        
+          .container{
+            width:40%;
+          }
+        
+          .overlay{
+            margin-top: 0%;
+          }
+        
+          .search-bar{
+            display: flex;
+            padding: 0.5vw;
+            justify-content: center;
+          }
+        
+          input.pl{
+            width:80%;
+            font-size: large;
+          }
+        
+          button.pl{
+            font-size: small;
+          }
+          
+        }
 
     </style>
 </head>
 <body>
     <header class="header">
-        <h1 class="text">Gamer's Gallery</h1>
+        <h1 class="text">Esports IIT KGP</h1>
         <div class="container">
             <div class="search-bar">
                 <input type="text" class="pl" placeholder="Search...">
@@ -195,8 +204,8 @@ footer {
          </div>
     </header>
     <main>
-        <h1>&nbsp;</h1>
-        <h2 class="text">SO THIS IS MY FALANA DIMKANA TEST</h2>
+        <h1>&nbsp</h1>
+        <h2 class="text">Unleash Your Gaming Skills HERE!</h2>
         <div class="slideshow-container">
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -204,24 +213,25 @@ footer {
             <!-- Slides -->
             <div class="slide">
                 <img src="https://wallpapers.com/images/hd/cod-background-5fnukv0lfgxq4ckm.jpg" alt="PLEASE WAIT Loading image...">
-                <div class="overlay">Description 1</div>
+                <div class="overlay">Massive Intel Drop: Call of Duty: Modern Warfare III, Call of Duty: Warzone, and Call of Duty: Warzone Mobile: Complete Season 4 Intel</div>
             </div>
             <div class="slide">
                 <img src="https://i.pinimg.com/originals/1d/46/27/1d4627f8b0a294c5e98e87f6cdbeaa8d.jpg" alt="PLEASE WAIT Loading image...">
-                <div class="overlay">Description 2</div>
+                <div class="overlay">‘Valorant’ 8.10 Patch Notes Improve Life For New Players</div>
             </div>
             <div class="slide">
                 <img src="https://wallpapers.com/images/hd/purple-gaming-nepi2tnxp6g0mvz9.jpg" alt="PLEASE WAIT Loading image...">
-                <div class="overlay">Description 3</div>
+                <div class="overlay">Explore various games, and show your full POTENTIAL!</div>
             </div>
           </div>
         </div>
-        <h2 class="text">SO THIS IS MY FALANA DIMKANA TEST</h2>
+        <h2 class="text">AND Contribute it to Your Prestigious IIT KGP!!!</h2>
         <h1>&nbsp;</h1>
         <h1>&nbsp;</h1>
     </main>
     <footer>
         <p class="text">&copy; 2024 Gamer's Gallery. All rights reserved.</p>
+        <a href="abtme.html">About Me</a>
     </footer>
     <script>
         let slideIndex = 0;
@@ -231,42 +241,41 @@ footer {
         let inte=null;
         const sl=document.getElementById("sl")
         function showSlide(index) {
-    if (index >= totalSlides) { slideIndex = 0; }
-    if (index < 0) { slideIndex = totalSlides - 1; }
-
-    slides.forEach((slide, i) => {
-        slide.style.display = i === slideIndex ? 'block' : 'none';
-    });
-}
-function search(){
-    window.alert("No Information available");
-}
-function plusSlides(n) {
-    showSlide(slideIndex += n);
-}
-
-sl.addEventListener("mouseover",()=>
-{
-    clearInterval(inte);
-});
-
-sl.addEventListener("mouseleave",()=>
-{
-    startSlideshow();
-});
-
-function startSlideshow() {
-    inte =setInterval(() => {
-        plusSlides(1);
-    }, 3000); // Change slide every 3 seconds
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log(1);
-    showSlide(slideIndex);
-    startSlideshow();
-});
-
+            if (index >= totalSlides) { slideIndex = 0; }
+            if (index < 0) { slideIndex = totalSlides - 1; }
+        
+            slides.forEach((slide, i) => {
+                slide.style.display = i === slideIndex ? 'block' : 'none';
+            });
+        }
+        function plusSlides(n) {
+            showSlide(slideIndex += n);
+        }
+        
+        function search(){
+            window.alert("No Information available");
+        }
+        
+        sl.addEventListener("mouseover",()=>
+        {
+            clearInterval(inte);
+        });
+        
+        sl.addEventListener("mouseleave",()=>
+        {
+            startSlideshow();
+        });
+        
+        function startSlideshow() {
+            inte =setInterval(() => {
+                plusSlides(1);
+            }, 3000); // Change slide every 3 seconds
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(slideIndex);
+            startSlideshow();
+        });
     </script>
 </body>
 </html>
